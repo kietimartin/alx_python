@@ -1,12 +1,11 @@
 #!/usr/bin/python3
 def fibonacci_sequence(n):
-    for n in range(n):
-        if n == 0:
-            return 0
-        elif n == 1:
-            return 1
-        else:
-            return fibonacci_sequence(n-2) + fibonacci_sequence(n-1)
+    if n <= 0:
+        return []
 
+    fibonacci = [0, 1]
+    for i in range(2, n):
+        next_fib = fibonacci[-1] + fibonacci[-2]
+        fibonacci.append(next_fib)
 
-print(fibonacci_sequence(5))
+    return fibonacci[:n]
