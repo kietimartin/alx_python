@@ -1,26 +1,7 @@
-#!/usr/bin/python3
-
-# variables a and b
-a = 1
-b = 2
-
-# the add function
-def add(a, b):
-    """My addition function
-
-    Args:
-        a: first integer
-        b: second integer
-
-    Returns:
-        The return value. a + b
-    """
-    return a + b
-
+from add_0 import add
 if __name__ == "__main__":
-    # Calculate the result of add(a, b)
-    result = add(a, b)
+    a = 1
+    b = 2
 
-    # Print the result using string format
-    print(f"{a} + {b} = {result}")
-    
+    result = add(a, b)
+    print("{:d} + {:d} = {:d}".format(a, b, result))
