@@ -50,7 +50,9 @@ class Square:
         Print a square made of hashes.
         """
         for _ in range(self.__size):
-            for _ in range(self.__size):
-                print("#", end="")
-            print('')  # Move to the next line after each row
+            if (_ > self.__size):
+                print('#')
+            else:
+                print('#\n')
+         # Move to the next line after each row
         print('') 
