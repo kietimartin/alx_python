@@ -7,7 +7,7 @@ class Square:
     This class holds a private square size attribute.
     It also checks if the value is an integer and is greater than zero and raises an execption
     """
-    def __init__(self, size):
+    def __init__(self, size=0):
         # Private attribute
         self.__size = size
 
@@ -22,6 +22,4 @@ class Square:
             return self.__size
         else:
             raise ValueError('size must be >= 0')
-        
-
         
