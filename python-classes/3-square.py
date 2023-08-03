@@ -1,3 +1,7 @@
+'''
+This is task 3 in alx into to software engineering
+This code gets a private class from a class and updates its value
+'''
 class Square:
     """
     This class holds a private square size attribute.
