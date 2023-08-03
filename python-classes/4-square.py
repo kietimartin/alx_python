@@ -52,7 +52,7 @@ class Square:
         self.row = rows
         self.col = col 
 
-        if rows >= self.__size:
+        if rows <= self.__size:
             if (col > 0) or (col <= self.__size):
                 a = '#'
                 print(a, end='')
