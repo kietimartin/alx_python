@@ -2,8 +2,14 @@
 This is task 5
 '''
 class BaseGeometry:
+    '''
+    This code does:
+        -Define Area function.
+        -Validate an integer value
+    '''
     def area(self):
-        """Define Area function.
+        """
+        Define Area function.
 
         Raises:
             Exception: if area is not implemented.
@@ -11,7 +17,8 @@ class BaseGeometry:
         raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
-        """Validate an integer value.
+        """
+        Validate an integer value.
 
         Args:
             name (str): Name of the value being validated.
