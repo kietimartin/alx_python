@@ -46,13 +46,10 @@ class Square:
         return self.__size * self.__size
     
     def my_print(self):
-        """
-        Print a square made of hashes.
-        """
-        for _ in range(self.__size):
-            for _ in range(self.__size):
-                print("#", end="")
-            print()  
-            # Move to the next line after each row, without adding a space
-        print() 
-         # Skip a line after printing the square
+                if self.__size == 0:
+                      print("")
+                else:
+                      for _ in range(0, self.__size):
+                            for _ in range(0, self.__size):
+                                  print("#", end="")
+                            print("")
