@@ -45,20 +45,11 @@ class Square:
         """
         return self.__size * self.__size
     
-    def my_print(self, rows=0,col=0):
-        '''
-        This is a method that created a square made of hashes
-        '''
-        self.row = rows
-        self.col = col 
-
-        if rows <= self.__size:
-            if (col > 0) or (col <= self.__size):
-                a = '#'
-                print(a, end='')
-                col += 1
-            elif col == self.size:
-                print(a)
-
-        elif (rows == 0):
-            print('')
+    def my_print(self):
+        """
+        Print a square made of hashes.
+        """
+        for _ in range(self.__size):
+            for _ in range(self.__size):
+                print("#", end="")
+            print()
