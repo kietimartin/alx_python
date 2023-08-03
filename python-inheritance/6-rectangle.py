@@ -1,52 +1,28 @@
 #!/usr/bin/python3
-"""Create class BaseGeometry"""
-
-class NoInitSubclassMeta(type):
-
-    '''
-    Metaclass that removes the '__init_subclass__' attribute from the class dictionary.
-
-    The purpose of this metaclass is to prevent the '__init_subclass__' method from being
-    inherited by subclasses. By using this metaclass, classes won't have the '__init_subclass__'
-    method listed when using the built-in 'dir()' function.
-    '''
-
-    def __dir__(cls):
-        return [attr for attr in super().__dir__() if
-                attr != '__init_subclass__']
+"""
+Creates a Rectangle class.
+"""
 
 
-class BaseGeometry(metaclass=NoInitSubclassMeta):
-    """Empty class
+BaseGeometry = __import__('5-base_geometry').BaseGeometry
+
+
+class Rectangle(BaseGeometry):
+    """class Rectangle that inherits from BaseGeometry (7-base_geometry.py).
+    Private instance attributes:
+        - width
+        - height
+    Inherits from BaseGeometry.
     """
-    def __dir__(cls):
-        """Removing __init_subclass_ attribute
-        from the dir result to pass the check
-        """
-        return [attr for attr in super().__dir__() if
-                attr != '__init_subclass__']
 
-    def area(self):
-        """Area function.
-
-        Raises:
-            Exception: if area is not implemented.
-        """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """Validates.
-
+    def __init__(self, width, height):
+        """Initializes an instance.
         Args:
-            name (str): name of the object.
-            value (int): value of the property.
-
-        Raises:
-            TypeError: if value is not an integer.
-            ValueError: if value is less than or equal to 0.
+            - width: width of the rectangle
+            - heigth: height of the rectangle
         """
-        if not isinstance(value, int):
-            raise TypeError("{} must be an integer".format(name))
-
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
+        self.integer_validator("width", width)
+        self.integer_validator("height", height)
+        self.__width = width
+        self.__height = height
+        
