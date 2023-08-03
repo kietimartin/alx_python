@@ -52,5 +52,7 @@ class Square:
         for _ in range(self.__size):
             for _ in range(self.__size):
                 print("#", end="")
-            print('')  # Move to the next line after each row
-        print('') 
+            print()  
+            # Move to the next line after each row, without adding a space
+        print() 
+         # Skip a line after printing the square
