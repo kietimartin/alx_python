@@ -3,6 +3,7 @@
 Creates a Square class.
 """
 
+Rectangle = __import__('7-rectangle').Rectangle
 
 class Square(Rectangle):
     """
