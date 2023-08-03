@@ -2,6 +2,15 @@
 """Create class BaseGeometry"""
 
 class NoInitSubclassMeta(type):
+
+    '''
+    Metaclass that removes the '__init_subclass__' attribute from the class dictionary.
+
+    The purpose of this metaclass is to prevent the '__init_subclass__' method from being
+    inherited by subclasses. By using this metaclass, classes won't have the '__init_subclass__'
+    method listed when using the built-in 'dir()' function.
+    '''
+
     def __dir__(cls):
         return [attr for attr in super().__dir__() if
                 attr != '__init_subclass__']
