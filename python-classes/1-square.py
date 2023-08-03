@@ -1,5 +1,5 @@
 '''
-Alx task 0,Classes and Objecy project
+Alx,Classes and Object project
 '''
 
 class Square:
