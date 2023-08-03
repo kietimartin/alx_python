@@ -27,14 +27,12 @@ class Square:
         checks if the size is an integer
         chacks if the size is greater than 0
         '''
-        if value.is_integer():
-            if value >= 0:
-                self.__size = value
-            else:
+        if not(value.is_integer()):
+            raise TypeError('size must be an integer')
+        if value >= 0:
                 raise ValueError('size must be >= 0')
         
-        else:
-            raise TypeError('size must be an integer')
+        self.__size = value
 
     def area(self):
         """
