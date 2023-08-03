@@ -1,11 +1,7 @@
-'''
-Alx,Classes and Object project
-'''
-
 class Square:
     """
     This class holds a private square size attribute.
-    It also checks if the value is an integer and is greater than zero and raises an execption
+    It also checks if the value is an integer and is greater than zero and raises an exception.
     """
     def __init__(self, size=0):
         """
@@ -22,22 +18,25 @@ class Square:
     
     @size.setter
     def size(self, value):
-        '''
-        Sets a value to the private instance 'size'
-        checks if the size is an integer
-        chacks if the size is greater than 0
-        '''
-        if not(value.is_integer()):
-            raise TypeError('size must be an integer')
-        if value >= 0:
-                raise ValueError('size must be >= 0')
-        
+        """
+        Sets a value to the private instance 'size'.
+        Checks if the size is a non-negative integer.
+        """
+        self.validate_size(value)
         self.__size = value
+
+    def validate_size(self, value):
+        """
+        Validate the size value separately for being an integer and being greater than zero.
+        """
+        if not isinstance(value, int):
+            raise TypeError('size must be an integer')
+        
+        if value < 0:
+            raise ValueError('size must be >= 0')
 
     def area(self):
         """
-        Computes the area of the square given the size
+        Computes the area of the square given the size.
         """
-        area = self.__size * self.__size
-
-        return area
+        return self.__size * self.__size
