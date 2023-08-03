@@ -52,4 +52,5 @@ class Square:
         for _ in range(self.__size):
             for _ in range(self.__size):
                 print("#", end="")
-            print(' ')
+            print('')  # Move to the next line after each row
+        print('\n') 
