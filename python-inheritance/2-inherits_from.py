@@ -1,5 +1,5 @@
 """
-This is task 2 of the inheritance project\
+This is task 3 of the inheritance project\
 """
 def inherits_from(obj, a_class):
     """
