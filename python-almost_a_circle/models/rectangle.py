@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-# Defining a class that inherits from base
+'''
+Defining a class that inherits from base
+'''
 
 from models.base import Base
 
