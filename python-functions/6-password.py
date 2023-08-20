@@ -12,7 +12,7 @@ def validate_password(password):
     '''
     # Length of password(8 characters or more)
     pass_length = len(password)
-    if (pass_length > 8):
+    if (pass_length < 8):
         return False
     
     has_upper = any(i.isupper() for i in password)
