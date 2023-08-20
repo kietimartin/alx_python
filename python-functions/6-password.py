@@ -15,9 +15,9 @@ def validate_password(password):
     if (pass_length > 8):
         return False
     
-    has_upper = any(password.isupper())
-    has_lower = any(password.islower())
-    has_digit = any(password.isdigit())
+    has_upper = any(i.isupper() for i in password)
+    has_lower = any(i.islower() for i in password)
+    has_digit = any(i.isdigit() for i in password)
 
     if not (has_digit and has_lower and has_upper == True):
         return False
