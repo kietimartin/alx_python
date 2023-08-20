@@ -4,7 +4,7 @@ number = random.randint(-10000, 10000)
 
 #we use modulo to get the last digit
 number = str(number)
-last_digit = number[:-1]
+last_digit = number[-1:]
 last_digit = int(last_digit)
 
 #set the conditions
