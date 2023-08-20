@@ -6,9 +6,9 @@ def is_prime(number):
     return : True if number is prime and false otherwise
     '''
 
-    if (number <= 0):
+    if (number <= 2):
         return False
-    for i in range(1, number):
+    for i in range(2, number):
         if number % i == 0:
             return False
     return True
