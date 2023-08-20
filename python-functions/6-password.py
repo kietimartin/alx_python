@@ -19,7 +19,7 @@ def validate_password(password):
     has_lower = any(password.islower())
     has_digit = any(password.isdigit())
 
-    if not (has_digit and has_lower and has_digit == True):
+    if not (has_digit and has_lower and has_upper == True):
         return False
     
     if ' ' in password:
