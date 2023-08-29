@@ -1,4 +1,4 @@
-'''This is a script listing all names starting with an N 
+'''This is a script listing all names starting with an N
 from the database hbtn_0e_0_usa
 
 Arguements:
