@@ -15,7 +15,7 @@ conn = MySQLdb.connect(
 curs = conn.cursor()
 # Exceuting the query
 query = "SELECT * FROM states WHERE UPPER(name) LIKE 'N%' ORDER BY id ASC;"
-curs.execute()
+curs.execute(query)
 #  Fetching data
 result = curs.fetchall()
 for row in result:
