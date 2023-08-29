@@ -1,28 +1,25 @@
 '''This is a creipt that list all states fro  the database 'hbtn_0e_0_usa'
 
 Arguements taken:
-                mysql username, 
-                mysql password and 
+                mysql username,
+                mysql password and
                 database name
 
 Returns; results sorted in ascending order by states.id
 '''
 import MySQLdb
 from sys import argv
-'''Connecting to the database
-'''
-
-db_conn = MySQLdb.connect(
-    host='localhost', port='3306', user=argv[1], passwd=argv[2], db=argv[3])
-# Mapping the object to the cursor method
-db_curs = db_conn.cursor()
-# Executing the query
+"""open database communication"""
+conn = MySQLdb.connect(host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3])
+# prepare a cursor object using cursor() method
+cur = conn.cursor()
+# execute SQL query using execute() method
 query = "SELECT * FROM states ORDER BY id ASC;"
-db_curs.execute(query)
-# Fetching the results
-result = db_curs.fetchall()
-for row in result:
+cur.execute(query)
+"""# Fetch a rows """
+results = cur.fetchall()
+for row in results:
     print(row)
-# closing both the database and cursor
-db_curs.close()
-db_conn.close()
+    """close both database and cursor"""
+cur.close()
+conn.close()
