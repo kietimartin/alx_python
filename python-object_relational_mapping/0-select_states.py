@@ -12,17 +12,17 @@ from sys import argv
 '''Connecting to the database
 '''
 
-connect  = MySQLdb.connect(host='localhost', port='3306', user=argv[1], passwd=argv[2], db=argv[3] )
+db_conn  = MySQLdb.connect(host='localhost', port='3306', user=argv[1], passwd=argv[2], db=argv[3])
 # Mapiing the object to the cursor method
-db_cursor = connect.cursor()
+db_curs = connect.cursor()
 # Executing the query
 query = "SELECT * FROM states ORDER BY id ASC;"
-db_cursor.execute(query)
+db_curs.execute(query)
 # Fetching the results
-result = db_cursor.fetchall()
+result = db_curs.fetchall()
 for row in result:
     print(row)
 
 #closing both the database and cursor
-db_cursor.close()
-connect.close()
+db_curs.close()
+db_conn.close()
