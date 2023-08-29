@@ -1,4 +1,5 @@
-'''This is a script listing all names starting with an N from the database hbtn_0e_0_usa
+'''This is a script listing all names starting with an N 
+from the database hbtn_0e_0_usa
 
 Arguements:
             username,
@@ -9,7 +10,7 @@ import MySQLdb
 from sys import argv
 # Creating the connection
 conn = MySQLdb.connect(
-    host='localhost', port='3306', user=argv[1], passwd=argv[2], db=argv[3]
+    host='localhost', port='3306', user=argv[1], passwd=argv[2], db=argv[3], charset="utf8"
 )
 # Initializing the cursor method
 curs = conn.cursor()
