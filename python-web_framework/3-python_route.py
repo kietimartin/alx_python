@@ -28,7 +28,7 @@ def c_is_fun(text):
 
 '''Adding a new python route'''
 @app.route('/python/<text>', strict_slashes=False)
-def python_show_text():
+def python_show_text(text):
     return f'Python {escape(text.replace("_", " "))}'
 
 '''Starting the server'''
