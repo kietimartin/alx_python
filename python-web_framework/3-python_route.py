@@ -58,7 +58,7 @@ def c_is_fun(text):
 @app.route('/python/<text>',
            default={'text': 'is cool'}, strict_slashes=False)
 def python_show_text(text):
-     """
+    """
     /python/<text> URL Route
     
     Responds with Python-related text.
