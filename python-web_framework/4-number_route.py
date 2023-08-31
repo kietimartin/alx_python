@@ -25,10 +25,10 @@ def python_text(text):
 """Is that a number"""
 @app.route('/number/<int:n>', strict_slashes=False)
 def this_is_a_number(n):
-    if not(isinstance(n)):
-        pass
-    else:
+    if isinstance(n, int):
         return f"{n} is a number"
+    else:
+        pass 
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
