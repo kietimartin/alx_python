@@ -4,12 +4,12 @@
 -Added new route '/hbnb'
 -Added new route '/c/<text>'
 -Added the python route
+-Default value of text is "is cool"
 '''
 from flask import Flask
 from markupsafe import escape
 
 app = Flask(__name__)
-text = "is cool"
 
 '''Defining the route'''
 @app.route('/', strict_slashes=False)
