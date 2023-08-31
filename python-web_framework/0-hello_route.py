@@ -1,12 +1,12 @@
 from flask import Flask
-# '''THis script displays a text when a certain page is opened on our 
-# testing server on flask
-# '''
+'''THis script displays a text when a certain page is opened on our 
+ testing server on flask
+'''
 app = Flask(__name__)
 
 # Defining the route
 @app.route('/', strict_slashes=False)
-def hello():
+def hello_hbnb():
     return 'Hello HBNB'
 
 #  Starting the server
