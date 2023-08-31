@@ -9,16 +9,19 @@ Arguements:
 import MySQLdb
 from sys import argv
 # Creating the connection
-if __name__ == '__main__':
-    db_connect = db.connect(host="localhost", port=3306,
-                            user=argv[1], passwd=argv[2], db=argv[3])
-    db_cursor = db_connect.cursor()
-
-    db_cursor.execute(
-        "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
-                ORDER BY states.id ASC")
-
-    rows_selected = db_cursor.fetchall()
-
-    for row in rows_selected:
-        print(row)
+conn = MySQLdb.connect(
+    host="localhost", port="3306", user=argv[1],
+    passwd=argv[2], db=argv[3], charset="utf8"
+)
+# Initializing the cursor method
+curs = conn.cursor()
+# Exceuting the query
+query = "SELECT * FROM states WHERE UPPER(name) LIKE 'N%' ORDER BY id ASC;"
+curs.execute(query)
+#  Fetching data
+result = curs.fetchall()
+for row in result:
+    print(row)
+# Closing the cursor and connection
+curs.close()
+conn.close()
