@@ -96,7 +96,8 @@ def show_template(n):
     """
     if isinstance(n, int):
         return render_template('5-number.html', number = n)
-    
+
+'''Adding a new route'''    
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
 def show_template(n):
     """
