@@ -99,7 +99,7 @@ def show_template(n):
 
 ''' Adding a route for "/number_template/<int:n>" '''
 @app.route('/number_odd_or_even/<int:n>', strict_slashes=False)
-def show_template(n):
+def is_it_even_or_odd_template(n):
     """
     /number_template/<n> URL Route
     
