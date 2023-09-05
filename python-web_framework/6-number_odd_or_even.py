@@ -109,7 +109,7 @@ def is_it_even_or_odd_template(n):
         n (int): python data type
     """
     if isinstance(n, int):
-        return render_template('6-number_odd_or_even.html', number = n)
+        return render_template('6-number_odd_or_even.html', number=n)
     
 '''Starting the server'''
 if __name__ == '__main__':
