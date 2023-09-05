@@ -16,7 +16,7 @@ Author:
 Date:
     August 31, 2023
 """
-from flask import Flask
+from flask import Flask, render_template
 from markupsafe import escape
 
 app = Flask(__name__)
@@ -72,11 +72,31 @@ def python_show_text(text):
 """Is that a number"""
 @app.route('/number/<int:n>', strict_slashes=False)
 def this_is_a_number(n):
+    """
+    /number/<n> URL Route
+    
+    Responds by returning a string if the number given is an integer.
+    
+    Args:
+        n : integer
+    """
     if isinstance(n, int):
         return f"{n} is a number"
 
 '''Adding a new route'''
-
+@app.route('/number_template/<int:n>', strict_slashes=False)
+def show_template(n):
+    """
+    /number_template/<n> URL Route
+    
+    Responds by displaying a template if the number n is an integer.
+    
+    Args:
+        n (int): python data type
+    """
+    if isinstance(n, int):
+        return render_template('5-number.html', number = n)
+    
 '''Starting the server'''
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port='5000')
