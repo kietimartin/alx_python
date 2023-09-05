@@ -72,14 +72,6 @@ def python_show_text(text):
 """Is that a number"""
 @app.route('/number/<int:n>', strict_slashes=False)
 def this_is_a_number(n):
-    """
-    /number/<n> URL Route
-    
-    Responds when the variable n is an integer by displaying the site.
-    
-    Args:
-        n : integer
-    """
     if isinstance(n, int):
         return f"{n} is a number"
 
