@@ -55,7 +55,7 @@ def c_is_fun(text):
     return f'C {escape(text.replace("_", " "))}'
 
 '''Adding a new python route'''
-@app.route('/python/<text>',
+@app.route('/python/',
            defaults={'text': 'is cool'}, strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
 def python_show_text(text):
