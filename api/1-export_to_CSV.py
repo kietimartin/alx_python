@@ -1,33 +1,22 @@
-#usr/bin/python
+'''
+This module export content from an api into a csv file define on creation
+return : csv
+'''
+import csv
 import requests
 import sys
-import csv
 
-id = sys.argv[1]
-request = requests.get('https://jsonplaceholder.typicode.com/users/' + id)
-request2 = requests.get('https://jsonplaceholder.typicode.com/users/' + id + '/todos')
-data = request.json()
-data2 = request2.json()
-completed = 0
-tasks = []
+user_id = str(sys.argv[1])
 
-for i in data2:
-    if i.get('completed') == True:
-        completed = completed + 1
-        tasks.append([id, data.get('name'), "Completed", i.get('title')])
-    else:
-        tasks.append([id, data.get('name'), "Not Completed", i.get('title')])
+user_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(user_id)
+todo_url = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(user_id)
 
-csv_file = "{}.csv".format(id)
+user_data = requests.get(user_url).json()
+todo_data = requests.get(todo_url).json()
 
-with open(csv_file, mode='w', newline='') as file:
-    writer = csv.writer(file)
-    #columns
-    writer.writerows(tasks)
+filename = "{}.csv".format(user_id)
 
-print(f'Employee {data.get("name")} is done with tasks ({completed}/{len(data2)}):')
-for item in data2:
-    if item.get('completed') == True:
-        print(f'\t {item.get("title")}')
-
-print(f'Data exported to {csv_file}.')
+with open(filename, 'w', newline='') as file:
+    writter = csv.writer(file, quoting = csv.QUOTE_ALL)
+    for task in todo_data:
+        writter.writerow([user_id, str(user_data['username']),task['completed'], task['title']])
